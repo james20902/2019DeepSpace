@@ -193,7 +193,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/2019DeepSpace.iml" filepath="$PROJECT_DIR$/2019DeepSpace.iml" group="2019DeepSpace" />
+      <module fileurl="file://$PROJECT_DIR$/2019DeepSpace.iml" filepath="$PROJECT_DIR$/2019DeepSpace.iml" />
       <module fileurl="file://$PROJECT_DIR$/2019DeepSpace_main.iml" filepath="$PROJECT_DIR$/2019DeepSpace_main.iml" group="2019DeepSpace" />
       <module fileurl="file://$PROJECT_DIR$/2019DeepSpace_test.iml" filepath="$PROJECT_DIR$/2019DeepSpace_test.iml" group="2019DeepSpace" />
     </modules>
@@ -345,6 +345,33 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.wpi.first.wpiutil/wpiutil-java/2019.2.1/9f22623b40d993b8b8ad02bd8a04a62bb3d287b2/wpiutil-java-2019.2.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: jaci.jniloader:JNILoader:1.0.1">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaci.jniloader/JNILoader/1.0.1/cda8f6f8880538cb168c9d6cf62e2d96c01ee7b5/JNILoader-1.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaci.jniloader/JNILoader/1.0.1/43472fb5bec68edf76f499d3ba49b7746465885a/JNILoader-1.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: jaci.pathfinder:Pathfinder-FRCSupport:2019.1.12">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaci.pathfinder/Pathfinder-FRCSupport/2019.1.12/a9b3d8c4606ffbbf2716869d427c83d0b18d0a67/Pathfinder-FRCSupport-2019.1.12.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaci.pathfinder/Pathfinder-FRCSupport/2019.1.12/849e21ddb1d906a9e584ae385b7096f0c6746ffb/Pathfinder-FRCSupport-2019.1.12-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: jaci.pathfinder:Pathfinder-Java:2019.1.12">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaci.pathfinder/Pathfinder-Java/2019.1.12/dfc260c5e39b9b2d5a26d1da0f4e2c58b9a1d716/Pathfinder-Java-2019.1.12.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jaci.pathfinder/Pathfinder-Java/2019.1.12/c37486376c441c7d0d29d377f128e29270b1b1bb/Pathfinder-Java-2019.1.12-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Gradle: junit:junit:4.10">

@@ -1,11 +1,11 @@
 package frc.team5115.joysticks;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+//import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.team5115.Debug;
-import frc.team5115.commands.arm.MoveDown;
-import frc.team5115.commands.arm.MoveUp;
-import frc.team5115.commands.arm.Stupidd;
+//import frc.team5115.commands.arm.MoveDown;
+//import frc.team5115.commands.arm.MoveUp;
+//import frc.team5115.commands.arm.Stupidd;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -60,14 +60,14 @@ public class InputManager {
                 secondary = new Controller(secondaryPort, controllerData.getJSONObject(new Joystick(secondaryPort).getName()));
             }
 
-            JoystickButton test = new JoystickButton(primary.returnInstance(), 4);
-            test.whenPressed(new MoveUp());
-
-            JoystickButton test2 = new JoystickButton(primary.returnInstance(), 2);
-            test2.whileHeld(new MoveDown());
-
-            POVButton test3 = new POVButton(primary.returnInstance(), 0);
-            test3.toggleWhenPressed(new Stupidd());
+//            JoystickButton test = new JoystickButton(primary.returnInstance(), 4);
+//            test.whenPressed(new MoveUp());
+//
+//            JoystickButton test2 = new JoystickButton(primary.returnInstance(), 2);
+//            test2.whileHeld(new MoveDown());
+//
+//            POVButton test3 = new POVButton(primary.returnInstance(), 0);
+//            test3.toggleWhenPressed(new Stupidd());
 
         } catch (Exception e) {
             e.printStackTrace();
