@@ -127,7 +127,7 @@ public class Drivetrain extends Subsystem {
         //define waypoints
         Waypoint[] test = new Waypoint[]{
                 new Waypoint(0, 0, 0),
-                new Waypoint(xDifference, yDifference, 0)
+                new Waypoint(1, 0, 0)
         };
         //follow (test) points with (config) parameters
         path = Pathfinder.generate(test, config);
@@ -155,7 +155,7 @@ public class Drivetrain extends Subsystem {
                 //Proportional Integral Derivative Velocity Acceleration
                 left.configurePIDVA(1.5, 0.0, 0, 1 / 4.3, 0);
                 right.configurePIDVA(1.5, 0.0, 0, 1 / 4.3, 0);
-                setState("Stopped");
+                setState("Follow");
                 break;
             case "Follow":
                 if (left.isFinished() && right.isFinished()) {
