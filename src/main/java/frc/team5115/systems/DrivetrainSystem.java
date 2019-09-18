@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.team5115.Konstanten;
 import frc.team5115.lib.TalonWrapper;
+import frc.team5115.robot.Robot;
 
 public class DrivetrainSystem extends Command {
 
@@ -19,6 +20,8 @@ public class DrivetrainSystem extends Command {
     private TalonWrapper frontright;
     private TalonWrapper backleft;
     private TalonWrapper backright;
+
+    private double throttle = 0.5;
 
     protected void initialize() {
         systemState = driveState.STOP;
@@ -45,9 +48,28 @@ public class DrivetrainSystem extends Command {
         backright.set(ControlMode.PercentOutput, right*throttle);
     }
 
+    public double processThrottle(){
+        throttle += 0.01 *(Robot.controller.getRawAxis(3) - Robot.controller.getRawAxis(2));
+
+        if (throttle > 1){
+            throttle = 1;
+        } else if(throttle < 0){
+            throttle = 0;
+        }
+        return throttle;
+    }
+
+    public void tankDrive(){
+        double left = -Robot.controller.getRawAxis(1) + Robot.controller.getRawAxis(4);
+        double right = -Robot.controller.getRawAxis(1) - Robot.controller.getRawAxis(4);
+
+        drive(left, right, throttle);
+    }
+
     protected void execute(){
+        processThrottle();
         if(systemState == driveState.DRIVE){
-            drive(0, 0, 0);
+            tankDrive();
         } else if(systemState == driveState.VISION){
             drive(0 ,0, 0);
         } else {

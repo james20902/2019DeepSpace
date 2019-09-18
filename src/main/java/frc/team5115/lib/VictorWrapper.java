@@ -45,4 +45,8 @@ public class VictorWrapper extends VictorSPX {
         }
     }
 
+    public boolean switchHit(){
+        return !upper.get() || !lower.get();
+    }
+
 }

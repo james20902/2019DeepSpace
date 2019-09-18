@@ -44,4 +44,8 @@ public class TalonWrapper extends TalonSRX{
         }
     }
 
+    public boolean switchHit(){
+        return !upper.get() || !lower.get();
+    }
+
 }

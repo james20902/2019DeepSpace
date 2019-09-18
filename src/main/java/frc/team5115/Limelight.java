@@ -55,5 +55,9 @@ public class Limelight {
         this.pipeline.setNumber(pipeline);
     }
 
+    public boolean targetReached(){
+        return false;
+    }
+
 }
 

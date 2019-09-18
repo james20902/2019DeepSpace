@@ -6,15 +6,6 @@ import edu.wpi.first.wpilibj.SerialPort;
 
 public class GyroWrapper {
 
-    private static GyroWrapper instance;
-
-    public static GyroWrapper getInstance(){
-        if(instance == null){
-            instance = new GyroWrapper();
-        }
-        return instance;
-    }
-
     private AHRS gyro;
 
     public GyroWrapper(){
@@ -24,7 +15,7 @@ public class GyroWrapper {
         if(!gyro.isConnected())
             gyro = new AHRS(SerialPort.Port.kUSB2);
         if(!gyro.isConnected())
-            DriverStation.reportError("Gyro not found on all 3 ports!", false);
+            DriverStation.reportError("Gyro not found on any interfaces!", false);
             gyro = null;
     }
 
