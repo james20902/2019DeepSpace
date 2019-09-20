@@ -24,7 +24,7 @@ public class DrivetrainSystem extends Command {
     private double throttle = 0.5;
 
     protected void initialize() {
-        systemState = driveState.STOP;
+        systemState = driveState.DRIVE;
 
         frontleft = new TalonWrapper(Konstanten.FRONT_LEFT_DRIVE);
         frontright = new TalonWrapper(Konstanten.FRONT_RIGHT_DRIVE);
@@ -63,11 +63,10 @@ public class DrivetrainSystem extends Command {
         double left = -Robot.controller.getRawAxis(1) + Robot.controller.getRawAxis(4);
         double right = -Robot.controller.getRawAxis(1) - Robot.controller.getRawAxis(4);
 
-        drive(left, right, throttle);
+        drive(left, right, processThrottle());
     }
 
     protected void execute(){
-        processThrottle();
         if(systemState == driveState.DRIVE){
             tankDrive();
         } else if(systemState == driveState.VISION){

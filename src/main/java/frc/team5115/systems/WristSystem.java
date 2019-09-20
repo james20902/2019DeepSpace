@@ -27,11 +27,8 @@ public class WristSystem extends Command {
     protected void initialize() {
         systemState = wristState.NEUTRAL;
 
-        xAxis = new VictorWrapper(Konstanten.WRIST_X);
+        xAxis = new VictorWrapper(Konstanten.WRIST_X, Konstanten.LEFT_SWITCH, Konstanten.RIGHT_SWTICH);
         yAxis = new VictorWrapper(Konstanten.WRIST_Y);
-
-        left = new DigitalInput(Konstanten.LEFT_SWITCH);
-        right = new DigitalInput(Konstanten.RIGHT_SWTICH);
     }
 
     public static void changeState(wristState state){
@@ -60,12 +57,7 @@ public class WristSystem extends Command {
 
 
     public void moveX(double speed){
-        double temp = speed;
-        DigitalInput limit = Math.signum(speed) == 1 ? right : left;
-        if(!limit.get()){
-            temp = 0;
-        }
-        xAxis.set(ControlMode.PercentOutput, temp);
+        xAxis.set(ControlMode.PercentOutput, speed);
     }
 
     public void moveY(double speed){

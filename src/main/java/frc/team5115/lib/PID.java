@@ -22,11 +22,10 @@ public class PID {
     public PID(double p, double i, double d) {
         this(p, i, d, 1);
     }
-
     //Runs the PID loop. Must be run every Constants.DELAY seconds. dReading should be in reading units per second
-    public double getPID(double setpoint, double reading, double dReading) {
-        error = setpoint - reading;
-        dError = -dReading;		// result of taking the derivative of the equation above with respect to time
+    public double output(double target, double position, double velocity) {
+        error = target - position;
+        dError = -velocity;		// result of taking the derivative of the equation above with respect to time
 
         output = kp * error + ki * errorAccum + kd * dError;
         // Do not integrate if the output exceeds max to avoid intergral windup. See youtu.be/fusr9eTceEo
@@ -41,12 +40,8 @@ public class PID {
         return output;
     }
 
-    public double getPID(double setpoint, double reading) {
-        return getPID(setpoint, reading, 0);
-    }
-
-    public boolean isFinished(double tolerance, double dErrorTolerance) {
-        return (Math.abs(error) < tolerance && Math.abs(dError) < dErrorTolerance);
+    public boolean isFinished(double tolerance, double velocityTolerance) {
+        return (Math.abs(error) < tolerance && Math.abs(dError) < velocityTolerance);
     }
 
     public double getError() {
